@@ -26,15 +26,14 @@ signed main() {
     }
 
     std::vector<bool> used(n, false);
-    dfs(g, used, 0);
+    int cnt = 0;
     for (int i = 0; i < n; i++) {
         if (!used[i]) {
-            std::cout << 0 << '\n';
-            assert(0);
-            return 0;
+            dfs(g, used, i);
+            cnt++;
         }
     }
 
-    std::cout << m - n + 1 << '\n';
+    std::cout << m - n + cnt << '\n';
     return 0;
 }
