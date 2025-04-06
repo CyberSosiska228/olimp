@@ -7,7 +7,7 @@ int f2(int ln, std::vector<int> &v, int n) {
         return 1;
     }
 
-    for (int i = v[n - 1] + 1; i <= 9; i++) {
+    for (int i = v[n] + 1; i <= 9; i++) {
         v.push_back(i);
         res += f2(ln, v, n + 1);
         v.pop_back();
@@ -46,13 +46,13 @@ int f4(std::string s, std::vector<int> &v, int n) {
         return 1;
     }
 
-    for (int i = v[n - 1] + 1; i < s[n] - '0'; i++) {
+    for (int i = v[n] + 1; i < s[n] - '0'; i++) {
         v.push_back(i);
         res += f4(s, v, n + 1);
         v.pop_back();
     }
 
-    if (s[n] - '0' >= v[n - 1] + 1) {
+    if (s[n] - '0' >= v[n] + 1) {
         v.push_back(s[n] - '0');
         res += f4(s, v, n + 1);
         v.pop_back();
